@@ -11,15 +11,14 @@ export type Person = {
   firstName: string;
   lastName: string;
   age: number;
+  followUp: (punctuation: string) => string;
   address?: Address;
 }
 
 export const greet = (name: Person, useExclamation: boolean = false, iterations: number = 1): void => {
-  if (name.address === undefined) {
-    console.error('Address is undefined');
-    return;
-  }
+  const punctuation = useExclamation ? '!' : '';
   repeat(() => {
-    console.log(`Hello ${name.firstName} ${name.lastName}${useExclamation ? '!' : ''}`)
+    console.log(`Hello ${name.firstName} ${name.lastName}${punctuation}`)
+    console.log(name.followUp(punctuation))
   }, iterations);
 }
