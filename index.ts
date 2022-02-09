@@ -1,11 +1,9 @@
 import {greet} from './functions';
 
-type MyString = string;
-
-type MyOtherString = string;
-
-const a: MyString | undefined = 'foo';
-const b: MyOtherString = 'bar';
+const a = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30
+}
 
 greet(a);
-greet(b, true, 2);

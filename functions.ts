@@ -1,7 +1,13 @@
 import {repeat} from './utils';
 
-export const greet = (name: string, useExclamation: boolean = false, iterations: number = 1): void => {
+type Person = {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
+
+export const greet = (name: Person, useExclamation: boolean = false, iterations: number = 1): void => {
   repeat(() => {
-    console.log(`Hello ${name}${useExclamation ? '!' : ''}`)
+    console.log(`Hello ${name.firstName} ${name.lastName}${useExclamation ? '!' : ''}`)
   }, iterations);
 }
