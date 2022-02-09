@@ -7,7 +7,7 @@ type Address = {
   zip: string;
 }
 
-type Person = {
+export type Person = {
   firstName: string;
   lastName: string;
   age: number;
